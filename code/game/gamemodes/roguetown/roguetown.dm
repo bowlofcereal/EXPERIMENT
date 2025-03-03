@@ -84,7 +84,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	var/lord_dead = FALSE
 	for(var/mob/living/carbon/human/H in GLOB.human_list)
 		if(H.mind)
-			if(H.job == "Grand Duke")
+			if(H.job == "Viscount")
 				lord_found = TRUE
 				if(H.stat == DEAD)
 					lord_dead = TRUE
@@ -267,8 +267,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 
 
 /datum/game_mode/chaosmode/proc/pick_aspirants()
-	var/list/possible_jobs_aspirants = list("Prince", "Princess", "Garrison Captain", "Steward", "Hand", "Household Guard")
-	var/list/possible_jobs_helpers = list("Garrison Captain", "Prince", "Princess", "Hand",  "Steward", "Household Guard")
+	var/list/possible_jobs_aspirants = list("Heir", "Heiress", "Garrison Captain", "Steward", "Hand", "Household Guard")
+	var/list/possible_jobs_helpers = list("Garrison Captain", "Heir", "Heiress", "Hand",  "Steward", "Household Guard")
 	var/list/rolesneeded = list("Aspirant","Loyalist","Supporter")
 
 	antag_candidates = get_players_for_role(ROLE_ASPIRANT)
@@ -341,7 +341,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_maniac()
-	restricted_jobs = list("Grand Duke", "Consort")
+	restricted_jobs = list("Viscount", "Consort")
 	antag_candidates = get_players_for_role(ROLE_MANIAC)
 	var/datum/mind/villain = pick_n_take(antag_candidates)
 	if(villain)
@@ -383,11 +383,11 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 /datum/game_mode/chaosmode/proc/pick_vampires()
 	var/vampsremaining = 3
 	restricted_jobs = list(
-	"Grand Duke",
+	"Viscount",
 	"Consort",
 	"Dungeoneer",
 	"Inquisitor",
-	"Confessor",
+	"Orthodoxist",
 	"Watchman",
 	"Man at Arms",
 	"Priest",
@@ -396,8 +396,7 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	"Garrison Captain",
 	"Court Magician",
 	"Templar",
-	"Bog Guard",
-	"Bog Master",
+	"Warden",
 	"Household Guard"
 	)
 	antag_candidates = get_players_for_role(ROLE_NBEAST)
@@ -430,11 +429,11 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 /datum/game_mode/chaosmode/proc/pick_werewolves()
 	// Ideally we want adventurers/pilgrims/towners to roll it
 	restricted_jobs = list(
-	"Grand Duke",
+	"Viscount",
 	"Consort",
 	"Dungeoneer",
 	"Inquisitor",
-	"Confessor",
+	"Orthodoxist",
 	"Watchman",
 	"Man at Arms",
 	"Priest",
@@ -443,9 +442,8 @@ var/global/list/roguegamemodes = list("Rebellion", "Vampires and Werewolves", "E
 	"Garrison Captain",
 	"Court Magician",
 	"Templar",
-	"Bog Guard",
-	"Bog Master",
-	"Royal Guard",
+	"Warden",
+	"Household Guard",
 	"Mortician",
 	"Desert Rider",
 	"Desert Rider Mercenary",

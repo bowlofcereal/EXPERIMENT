@@ -125,7 +125,7 @@
 
 /datum/objective/aspirant/loyal/two
 	name = "Loyalist"
-	explanation_text = "I must ensure that the Grand Duke continues to reign."
+	explanation_text = "I must ensure that the Viscount continues to reign."
 	triumph_count = 3
 	var/initialruler
 

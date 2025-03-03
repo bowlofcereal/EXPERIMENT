@@ -476,8 +476,8 @@
 //job specials
 /datum/special_trait/punkprincess //I think everyone will like the Rebellous Prince-Like Princess. I'd love to do one for the prince as well that gives him princess loadout, but, up to you!
 	name = "Rebellous Daughter"
-	greet_text = span_notice("I am quite rebellious for a princess. Screw Noble Customs!")
-	req_text = "Be a princess"
+	greet_text = span_notice("I am quite rebellious for a Heiress. Screw Noble Customs!")
+	req_text = "Be an Heiress"
 	allowed_sexes = list(FEMALE)
 	allowed_jobs = list(/datum/job/roguetown/prince)
 	weight = 50

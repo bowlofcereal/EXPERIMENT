@@ -11,7 +11,7 @@
 	icon_state = "asse"
 	spans = list(SPAN_PAPYRUS)
 	syllables = list("trick", "peasant", "torch", "cards", "gamble", "cottar", "knight", "grove", "mire", "coast", "dice", "dragon", "speak",
-		"limner", "caudle", "fel", "trencher", "volf", "skelelon", "zomble", "kingsfield", "lyndvhar", "prince", "princess", "trap",
+		"limner", "caudle", "fel", "trencher", "volf", "skelelon", "zomble", "kingsfield", "lyndvhar", "heir", "heiress", "trap",
 		"dawn", "dusk", "night", "day", "table", "bench", "tunnel", "roof", "floorboards",
 		"pintle", "drake", "elf", "dwarf", "tall", "short", "frame", "portrait", "lord", "lady", "river", "woods", "axe", "dagger", "sword", "day", "night", "listen",
 		"look", "see", "watch", "hear", "peep", "smell", "taste", "no", "yes", "silver", "gold", "sand", "grass", "rock",
