@@ -1075,7 +1075,7 @@
 	nodismemsleeves = TRUE
 	salvage_result = /obj/item/natural/fur
 
-/obj/item/clothing/cloak/heartfelt
+/obj/item/clothing/cloak/weocilyn
 	name = "red cloak"
 	desc = ""
 	icon_state = "heartfelt_cloak"

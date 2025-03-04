@@ -172,7 +172,7 @@
 	sewrepair = TRUE
 	component_type = /datum/component/storage/concrete/roguetown/satchel
 
-/obj/item/storage/backpack/rogue/satchel/heartfelt
+/obj/item/storage/backpack/rogue/satchel/weocilyn
 	populate_contents = list(
 		/obj/item/natural/feather,
 		/obj/item/paper,

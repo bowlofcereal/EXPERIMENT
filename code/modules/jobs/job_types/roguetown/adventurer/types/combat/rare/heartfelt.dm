@@ -1,24 +1,24 @@
 
-/datum/advclass/heartfeltlord
-	name = "Lord of Heartfelt"
-	tutorial = "You are the proud lord of heartfelt \
+/datum/advclass/weocilynlord
+	name = "Lord of Weocilyn"
+	tutorial = "You are the proud lord of Weocilyn \
 	but why did you come to the isle of enigma?"
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
-	outfit = /datum/outfit/job/roguetown/adventurer/heartfeltlord
+	outfit = /datum/outfit/job/roguetown/adventurer/weocilynlord
 	maximum_possible_slots = 1
 	pickprob = 100
 	traits_applied = list(TRAIT_NOBLE, TRAIT_NOSEGRAB, TRAIT_HEAVYARMOR)
 	category_tags = list(CTAG_DISABLED)
 
-/datum/outfit/job/roguetown/adventurer/heartfeltlord/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/adventurer/weocilynlord/pre_equip(mob/living/carbon/human/H)
 	..()
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	belt = /obj/item/storage/belt/rogue/leather/black
 	shoes = /obj/item/clothing/shoes/roguetown/nobleboot
 	pants = /obj/item/clothing/under/roguetown/tights/black
-	cloak = /obj/item/clothing/cloak/heartfelt
-	armor = /obj/item/clothing/suit/roguetown/armor/heartfelt/lord
+	cloak = /obj/item/clothing/cloak/weocilyn
+	armor = /obj/item/clothing/suit/roguetown/armor/weocilyn/lord
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 	beltl = /obj/item/rogueweapon/sword/long/marlin
 	beltr = /obj/item/rogueweapon/huntingknife

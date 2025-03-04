@@ -1,21 +1,41 @@
 /datum/advclass/knighterrant
 	name = "Knight Errant"
-	tutorial = "Traveling nobility from other regions of the world."
+	tutorial = "You are a Knight-Errant, a wandering noble from a distant land. Your armor bears the crest of a great house, and your blade carries the weight of your chivalry. Whether driven by glory, a sense of adventure or a quest for purpose, your journey has brought you to Lyndhardtia."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
-	outfit = /datum/outfit/job/roguetown/adventurer/noble
+	allowed_races = RACES_SHUNNED_UP
+	outfit = /datum/outfit/job/roguetown/adventurer/knight
 	maximum_possible_slots = 1
 	pickprob = 30
 	traits_applied = list(TRAIT_OUTLANDER)
 	category_tags = list(CTAG_ADVENTURER)
-
-/datum/outfit/job/roguetown/adventurer/noble/pre_equip(mob/living/carbon/human/H)
+/* Adventurer classes can't have an after_spawn apparently.
+/datum/advclass/knighterrant/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+	..()
+	if(ishuman(L))
+		var/mob/living/carbon/human/H = L
+		if(istype(H.cloak, /obj/item/clothing/cloak/tabard/knight))
+			var/obj/item/clothing/S = H.cloak
+			var/index = findtext(H.real_name, " ")
+			if(index)
+				index = copytext(H.real_name, 1,index)
+			if(!index)
+				index = H.real_name
+			S.name = "knight tabard ([index])"
+		var/prev_real_name = H.real_name
+		var/prev_name = H.name
+		var/honorary = "Ser"
+		if(H.gender == FEMALE)
+			honorary = "Dame"
+		H.real_name = "[honorary] [prev_real_name]"
+		H.name = "[honorary] [prev_name]"
+*/
+/datum/outfit/job/roguetown/adventurer/knight/pre_equip(mob/living/carbon/human/H)
 	..()
 	to_chat(H, span_warning("You are a knight from a distant land, a scion of a noble house visiting Lyndhardtia for one reason or another."))
 	head = /obj/item/clothing/head/roguetown/helmet/heavy/knight
 	gloves = /obj/item/clothing/gloves/roguetown/chain
 	pants = /obj/item/clothing/under/roguetown/chainlegs
-	cloak = /obj/item/clothing/cloak/stabard
+	cloak = /obj/item/clothing/cloak/tabard/knight
 	neck = /obj/item/clothing/neck/roguetown/bevor
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 	armor = /obj/item/clothing/suit/roguetown/armor/brigandine/coatplates

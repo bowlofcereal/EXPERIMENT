@@ -1,20 +1,25 @@
-/datum/migrant_role/heartfelt/lord
-	name = "Lord of Heartfelt"
-	greet_text = "You are the Lord of Heartfelt, ruler of a once-prosperous barony now in ruin. Guided by your Magos, you journey to the Peak, seeking aid to restore your domain to its former glory, or perhaps claim a new throne."
-	outfit = /datum/outfit/job/roguetown/heartfelt/lord
+/datum/migrant_role/weocilyn/lord
+	name = "Lord of Weocilyn"
+	greet_text = "You are the Lord of Weocilyn, the once-proud ruler of a barony now reduced to ashes. With little more than your maps, your prayers, and the fire of vengeance in your heart, you set out for the port city of Lyndvhar. There, you hope to find aid and sanctuary in the halls of your old friend, the Viscount. This will be the first step in a plan to reclaim your honor and exact retribution against Baleron, the man who brought your lands to ruin."
+	outfit = /datum/outfit/job/roguetown/weocilyn/lord
 	allowed_sexes = list(MALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = list(
+		/datum/species/human/northern,
+		/datum/species/elf/wood,
+		/datum/species/human/halfelf,
+		/datum/species/dwarf/mountain
+	)
 	grant_lit_torch = TRUE
 	show_wanderer_examine = FALSE
 
-/datum/outfit/job/roguetown/heartfelt/lord/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/weocilyn/lord/pre_equip(mob/living/carbon/human/H)
 	..()
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	belt = /obj/item/storage/belt/rogue/leather/black
 	shoes = /obj/item/clothing/shoes/roguetown/nobleboot
 	pants = /obj/item/clothing/under/roguetown/tights/black
-	cloak = /obj/item/clothing/cloak/heartfelt
-	armor = /obj/item/clothing/suit/roguetown/armor/heartfelt/lord
+	cloak = /obj/item/clothing/cloak/weocilyn
+	armor = /obj/item/clothing/suit/roguetown/armor/weocilyn/lord
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 	beltl = /obj/item/rogueweapon/sword/long/marlin
 	beltr = /obj/item/rogueweapon/huntingknife
@@ -47,22 +52,21 @@
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
-/datum/migrant_role/heartfelt/lady
-	name = "Lady of Heartfelt"
-	greet_text = "You are the Lady of Heartfelt, once a respected noblewoman now struggling to survive in a desolate landscape. With your home in ruins, you look to the Peak, hoping to find new purpose or refuge amidst the chaos."
-	outfit = /datum/outfit/job/roguetown/heartfelt/lady
+/datum/migrant_role/weocilyn/lady
+	name = "Lady of Weocilyn"
+	greet_text = "You are the Lady of Weocilyn, once a respected noblewoman now struggling to survive in a desolate landscape. With your home in ruins, you look to Lyndvhar, hoping to find refuge amidst the chaos."
+	outfit = /datum/outfit/job/roguetown/weocilyn/lady
 	allowed_sexes = list(FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = RACES_SHUNNED_UP
 	grant_lit_torch = TRUE
 	show_wanderer_examine = FALSE
 
-/datum/outfit/job/roguetown/heartfelt/lady/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/weocilyn/lady/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/hennin
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
-	cloak = /obj/item/clothing/cloak/heartfelt
+	cloak = /obj/item/clothing/cloak/weocilyn
 	if(isdwarf(H))
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress
 	else
@@ -73,7 +77,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	beltr = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish
-	id = /obj/item/clothing/ring/silver
+	id = /obj/item/clothing/ring/emeralds
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 4, TRUE)
@@ -93,26 +97,72 @@
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
 
-/datum/migrant_role/heartfelt/hand
-	name = "Hand of Heartfelt"
-	greet_text = "You are the Hand of Heartfelt, burdened by the perception of failure in protecting your Lord's domain. Despite doubts from others, your loyalty remains steadfast as you journey to the Peak, determined to fulfill your duties."
-	outfit = /datum/outfit/job/roguetown/heartfelt/hand
-	allowed_races = RACES_ALL_KINDS
+/datum/migrant_role/weocilyn/scion
+	name = "Scion of Weocilyn"
+	greet_text = "You are the Scion of Weocilyn, the young scion of a once-prosperous barony now lying in ruins. Guided by duty and your parents, you now journey to the port city of Lyndvhar, place of refuge for you and your family. But beneath it all... burns a quiet determination: to one day confront Baleron, the man who destroyed everything your family held dear."
+	outfit = /datum/outfit/job/roguetown/weocilyn/scion
+	allowed_races = RACES_SHUNNED_UP
+	allowed_ages = AGE_ADULT
 	grant_lit_torch = TRUE
 	show_wanderer_examine = FALSE
 
-/datum/outfit/job/roguetown/heartfelt/hand/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/weocilyn/scion/pre_equip(mob/living/carbon/human/H)
+	..()
+	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/noblecoat
+	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/winterjacket
+	pants = /obj/item/clothing/under/roguetown/tights/black
+	shoes = /obj/item/clothing/shoes/roguetown/nobleboot
+	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
+	beltl = /obj/item/flashlight/flare/torch/lantern
+	beltr = /obj/item/rogueweapon/sword/rapier/dec
+	id = /obj/item/clothing/ring/rubys
+	backl = /obj/item/storage/backpack/rogue/satchel
+	if(H.mind)
+		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
+		H.change_stat("perception", 2)
+		H.change_stat("strength", -1)
+		H.change_stat("intelligence", 2)
+		H.change_stat("fortune", 1)
+		H.change_stat("speed", 1)
+	ADD_TRAIT(H, TRAIT_SEEPRICES_SHITTY, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+
+/datum/migrant_role/weocilyn/hand
+	name = "Hand of Weocilyn"
+	greet_text = "You are the Hand of Weocilyn, burdened by the perception of failure in protecting your Lord's domain. Despite doubts from others, your loyalty remains steadfast as you journey to the port city of Lyndvhar, determined to fulfill your duties."
+	outfit = /datum/outfit/job/roguetown/weocilyn/hand
+	allowed_races = list(
+		/datum/species/human/northern,
+		/datum/species/elf/wood,
+		/datum/species/human/halfelf,
+		/datum/species/dwarf/mountain
+	)
+	grant_lit_torch = TRUE
+	show_wanderer_examine = FALSE
+
+/datum/outfit/job/roguetown/weocilyn/hand/pre_equip(mob/living/carbon/human/H)
 	..()
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	belt = /obj/item/storage/belt/rogue/leather/black
 	shoes = /obj/item/clothing/shoes/roguetown/nobleboot
 	pants = /obj/item/clothing/under/roguetown/tights/black
-	armor = /obj/item/clothing/suit/roguetown/armor/heartfelt/hand
+	armor = /obj/item/clothing/suit/roguetown/armor/weocilyn/hand
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 	gloves =/obj/item/clothing/gloves/roguetown/angle
 	beltl = /obj/item/rogueweapon/sword/sabre/dec
 	beltr = /obj/item/rogueweapon/huntingknife
-	backr = /obj/item/storage/backpack/rogue/satchel/heartfelt
+	backr = /obj/item/storage/backpack/rogue/satchel/weocilyn
 	mask = /obj/item/clothing/mask/rogue/spectacles/golden
 	id = /obj/item/scomstone
 	if(H.mind)
@@ -130,24 +180,24 @@
 		H.change_stat("strength", 2)
 		H.change_stat("perception", 3)
 		H.change_stat("intelligence", 3)
-
+	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 
-/datum/migrant_role/heartfelt/knight
-	name = "Knight of Heartfelt"
-	greet_text = "You are a Knight of Heartfelt, once part of a brotherhood in service to your Lord. Now, alone and committed to safeguarding what remains of your court, you ride to the Peak, resolved to ensure their safe arrival."
-	outfit = /datum/outfit/job/roguetown/heartfelt/knight
-	allowed_races = RACES_ALL_KINDS
+/datum/migrant_role/weocilyn/knight
+	name = "Knight of Weocilyn"
+	greet_text = "You are a Knight of Weocilyn, once part of a brotherhood in service to your Lord. Now, alone and committed to safeguarding what remains of your court, you ride to the port city of Lyndvhar, resolved to ensure their safe arrival."
+	outfit = /datum/outfit/job/roguetown/weocilyn/knight
+	allowed_races = RACES_SHUNNED_UP
 	grant_lit_torch = TRUE
 	show_wanderer_examine = FALSE
 
-/datum/outfit/job/roguetown/heartfelt/knight/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/weocilyn/knight/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/helmet/heavy/knight
 	gloves = /obj/item/clothing/gloves/roguetown/plate
 	pants = /obj/item/clothing/under/roguetown/platelegs
-	cloak = /obj/item/clothing/cloak/tabard/knight/guard
+	cloak = /obj/item/clothing/cloak/tabard/knight
 	neck = /obj/item/clothing/neck/roguetown/bevor
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/full
@@ -181,17 +231,15 @@
 		H.change_stat("speed", -1)
 	H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
 
-	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 
-/datum/migrant_role/heartfelt/knight/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+/datum/migrant_role/weocilyn/knight/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
-		if(istype(H.cloak, /obj/item/clothing/cloak/tabard/knight/guard))
+		if(istype(H.cloak, /obj/item/clothing/cloak/tabard/knight))
 			var/obj/item/clothing/S = H.cloak
 			var/index = findtext(H.real_name, " ")
 			if(index)
@@ -201,110 +249,44 @@
 			S.name = "knight tabard ([index])"
 		var/prev_real_name = H.real_name
 		var/prev_name = H.name
-		var/honorary = "Sir"
+		var/honorary = "Ser"
 		if(H.gender == FEMALE)
 			honorary = "Dame"
 		H.real_name = "[honorary] [prev_real_name]"
 		H.name = "[honorary] [prev_name]"
 
-/datum/migrant_role/heartfelt/magos
-	name = "Magos of Heartfelt"
-	greet_text = "You are the Magos of Heartfelt, renowned for your arcane knowledge yet unable to foresee the tragedy that befell your home. Drawn by a guiding star to the Peak, you seek answers and perhaps a new purpose in the wake of destruction."
-	outfit = /datum/outfit/job/roguetown/heartfelt/magos
-	allowed_races = RACES_ALL_KINDS
+/datum/migrant_role/weocilyn/housekeeper
+	name = "Housekeeper of Weocilyn"
+	greet_text = "You are the Housekeeper of Weocilyn, the last remaining servant of a once-great house now brought to ruin. Your life was once defined by duty and loyalty to the barony, but the tragedy that befell your home has reshaped your path. With unwavering resolve, you now journey to the port city of Lyndvhar, carrying the weight of your memories and the hope of rebuilding what was lost. Though the road ahead is uncertain, your determination to aid the surviving members of House Weocilyn and restore its legacy remains steadfast."
+	outfit = /datum/outfit/job/roguetown/weocilyn/housekeeper
+	allowed_races = RACES_SHUNNED_UP
 	grant_lit_torch = TRUE
 	show_wanderer_examine = FALSE
 
-/datum/outfit/job/roguetown/heartfelt/magos/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/weocilyn/housekeeper/pre_equip(mob/living/carbon/human/H)
 	..()
-	neck = /obj/item/clothing/neck/roguetown/talkstone
-	cloak = /obj/item/clothing/cloak/black_cloak
-	armor = /obj/item/clothing/suit/roguetown/shirt/robe/black
-	pants = /obj/item/clothing/under/roguetown/tights/random
-	shoes = /obj/item/clothing/shoes/roguetown/shortboots
-	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
-	beltl = /obj/item/flashlight/flare/torch/lantern
-	id = /obj/item/clothing/ring/gold
-	r_hand = /obj/item/rogueweapon/woodstaff
-	backl = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/reagent_containers/glass/bottle/rogue/poison,/obj/item/reagent_containers/glass/bottle/rogue/healthpot)
-	ADD_TRAIT(H, TRAIT_SEEPRICES, "[type]")
-	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/magic/arcane, 5, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
-		H.change_stat("strength", -1)
-		H.change_stat("constitution", -1)
-		H.change_stat("intelligence", 4)
-		H.mind.adjust_spellpoints(3)
-		ADD_TRAIT(H, TRAIT_MAGEARMOR, TRAIT_GENERIC)
-		if(H.age == AGE_OLD)
-			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
-			H.change_stat("speed", -1)
-			H.change_stat("intelligence", 1)
-			H.change_stat("perception", 1)
-			H.mind.adjust_spellpoints(1)
-			if(ishumannorthern(H))
-				belt = /obj/item/storage/belt/rogue/leather/plaquegold
-				cloak = null
-				head = /obj/item/clothing/head/roguetown/wizhat
-				armor = /obj/item/clothing/suit/roguetown/shirt/robe/wizard
-				H.dna.species.soundpack_m = new /datum/voicepack/male/wizard()
-		var/list/spells = list(/obj/effect/proc_holder/spell/targeted/touch/prestidigitation, /obj/effect/proc_holder/spell/invoked/projectile/fireball/greater)
-		for(var/S in spells)
-			H.mind.AddSpell(new S)
-
-/datum/migrant_role/heartfelt/prior
-	name = "Prior of Heartfelt"
-	greet_text = "The Prior of Heartfelt, you were destined for ascension within the Church, but fate intervened with the barony's downfall, delaying it indefinitely. Still guided by the blessings of Astrata, you journey to the Peak, determined to offer what aid and solace you can."
-	outfit = /datum/outfit/job/roguetown/heartfelt/prior
-	allowed_races = RACES_ALL_KINDS
-	grant_lit_torch = TRUE
-	show_wanderer_examine = FALSE
-
-/datum/outfit/job/roguetown/heartfelt/prior/pre_equip(mob/living/carbon/human/H)
-	..()
-	neck = /obj/item/clothing/neck/roguetown/psicross/astrata
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
 	pants = /obj/item/clothing/under/roguetown/tights/black
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
-	belt = /obj/item/storage/belt/rogue/leather/rope
-	beltl = /obj/item/flashlight/flare/torch/lantern
-	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
-	armor = /obj/item/clothing/suit/roguetown/shirt/robe/priest
-	cloak = /obj/item/clothing/cloak/chasuble
 	backl = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(
-		/obj/item/needle/pestra = 1,
-	)
-	ADD_TRAIT(H, TRAIT_CHOSEN, TRAIT_GENERIC)
+	belt = /obj/item/storage/belt/rogue/leather
+	beltl = /obj/item/flashlight/flare/torch/lantern
+	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
+	armor = /obj/item/clothing/suit/roguetown/armor/longcoat
+	if(H.pronouns == SHE_HER || H.pronouns == THEY_THEM_F) 
+		armor = /obj/item/clothing/suit/roguetown/armor/silkcoat
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/alchemy, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE)
-		if(H.age == AGE_OLD)
-			H.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
-		H.change_stat("strength", -1)
-		H.change_stat("intelligence", 3)
-		H.change_stat("constitution", -1)
-		H.change_stat("endurance", 1)
-		H.change_stat("speed", -1)
-	var/datum/devotion/C = new /datum/devotion(H, H.patron)
-	C.grant_spells_priest(H)
-	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+		H.change_stat("speed", 1)
+		H.change_stat("intelligence", 2)
+		H.change_stat("perception", 2)
+		H.change_stat("fortune", 1)
