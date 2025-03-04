@@ -102,6 +102,7 @@
 	armor = list("blunt" = 55, "slash" = 50, "stab" = 45, "piercing" = 40, "fire" = 0, "acid" = 0)
 	max_integrity = 250
 	sellprice = 30
+	color = "#976E6B"
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/otavan
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
